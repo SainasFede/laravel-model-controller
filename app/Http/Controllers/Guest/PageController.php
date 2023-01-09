@@ -19,7 +19,11 @@ class PageController extends Controller
     public function movies(){
         //faccio la query film
         $movies = Movie::all();
-        dd($movies);
         return view('movies', compact('movies'));
+    }
+
+    public function movieDetail($id){
+        $movie = Movie::find($id);
+        return view('movie_detail', compact('movie'));
     }
 }
